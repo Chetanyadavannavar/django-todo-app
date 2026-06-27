@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<center>
+
+    <h2>Change Password</h2>
+    <br>
+
+    {% if messages %}
+        {% for message in messages %}
+            <h3 style="color:red;">{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        <input type="text" value="{{ request.user.username }}" readonly>
+        <br><br>
+
+        {% if new_pass %}
+
+            <label>Enter New Password:</label>
+            <input type="password" name="newpasw" required>
+            <br><br>
+
+        {% else %}
+
+            <label>Enter Old Password:</label>
+            <input type="password" name="oldpasw" required>
+            <br><br>
+
+        {% endif %}
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</center>
+
+{% endblock %}

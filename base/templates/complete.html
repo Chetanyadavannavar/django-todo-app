@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'task.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+
+    <h2 class="page-title">
+        Completed Tasks
+    </h2>
+
+    {% for task in tasks %}
+
+        <div class="task-card completed">
+
+            <h3>{{task.title}}</h3>
+
+            <p>{{task.desc}}</p>
+
+            <div class="task-actions">
+
+                <a href="{% url 'crestore' task.id %}" class="btn btn-warning">
+                    Restore
+                </a>
+
+                <a href="{% url 'cdelete' task.id %}" class="btn btn-danger">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <p class="empty-msg">
+            No Completed Tasks
+        </p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

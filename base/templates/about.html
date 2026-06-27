@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="about">
+        <h1>About TODO App</h1>
+
+        <p>
+            The TODO App is a simple and efficient task management application designed 
+            to help users organize their daily activities. It allows users to create, 
+            manage, and track their tasks easily.
+        </p>
+
+        <p>
+            With this application, users can add new tasks, mark tasks as completed, 
+            move tasks to trash, and manage their productivity in a structured way.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Add and manage tasks</li>
+            <li>Mark tasks as completed</li>
+            <li>Move unwanted tasks to trash</li>
+            <li>User authentication (Login / Register)</li>
+            <li>Personal profile management</li>
+        </ul>
+
+        <h2>Purpose</h2>
+        <p>
+            The goal of this application is to help users stay organized, increase 
+            productivity, and keep track of important tasks in a simple and user-friendly way.
+        </p>
+
+        <h2>Technology Used</h2>
+        <ul>
+            <li>Django (Backend Framework)</li>
+            <li>HTML & CSS (Frontend)</li>
+            <li>SQLite / Database</li>
+        </ul>
+
+        <p>
+            This project demonstrates how a full-stack web application can be built 
+            using Django with user authentication and task management functionality.
+        </p>
+    </section>
+{% endblock %}

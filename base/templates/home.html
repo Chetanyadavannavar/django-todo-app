@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'task.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+
+    <h2 class="page-title">Current Tasks</h2>
+
+    <div class="top-actions">
+        <a href="{% url 'hdelete_all' %}" class="btn btn-danger">
+            Delete All
+        </a>
+
+        <a href="{% url 'hcomplete_all' %}" class="btn btn-success">
+            Complete All
+        </a>
+    </div>
+
+    {% for task in tasks %}
+
+        <div class="task-card">
+
+            <h3>{{task.title}}</h3>
+
+            <p>{{task.desc}}</p>
+
+            <small>
+                {{task.created_date}}
+            </small>
+
+            <div class="task-actions">
+
+                <a href="{% url 'hcompleted' task.id %}" class="btn btn-success">
+                    Complete
+                </a>
+
+                <a href="{% url 'hdelete' task.id %}" class="btn btn-danger">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <p class="empty-msg">
+            No Tasks Available
+        </p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

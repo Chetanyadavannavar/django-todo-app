@@ -1,0 +1,148 @@
+.login-container{
+    width:90%;
+    max-width:500px;
+
+    margin:80px auto;
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.05));
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.35);
+
+    animation:loginFade 1s ease;
+}
+
+@keyframes loginFade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.login-container h2{
+    text-align:center;
+    margin-bottom:35px;
+
+    font-size:40px;
+
+    background:
+    linear-gradient(to right,#38bdf8,#818cf8);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:textGlow 3s infinite alternate;
+}
+
+@keyframes textGlow{
+    from{
+        text-shadow:0 0 10px rgba(56,189,248,0.3);
+    }
+    to{
+        text-shadow:0 0 25px rgba(129,140,248,0.7);
+    }
+}
+
+/* FORM */
+.form-group{
+    margin-bottom:24px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+    color:#e2e8f0;
+    font-weight:500;
+}
+
+.form-group input{
+    width:100%;
+    padding:16px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    transition:0.4s;
+}
+
+.form-group input::placeholder{
+    color:#cbd5e1;
+}
+
+.form-group input:focus{
+    transform:scale(1.02);
+
+    box-shadow:
+    0 0 20px rgba(56,189,248,0.4);
+}
+
+/* BUTTON */
+.login-container button{
+    width:100%;
+    padding:16px;
+
+    border:none;
+    border-radius:18px;
+
+    background:
+    linear-gradient(135deg,#06b6d4,#3b82f6);
+
+    color:white;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.login-container button:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 30px rgba(59,130,246,0.35);
+}
+
+/* ERROR */
+.error-msg{
+    text-align:center;
+    color:#f87171;
+    margin-bottom:18px;
+}
+
+/* EXTRA LINKS */
+.extra-links{
+    margin-top:25px;
+    text-align:center;
+}
+
+.extra-links a{
+    color:#38bdf8;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.extra-links a:hover{
+    color:white;
+}
